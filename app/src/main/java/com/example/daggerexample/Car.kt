@@ -2,7 +2,7 @@ package com.example.daggerexample
 
 import android.util.Log
 
-class Car {
+class Car constructor(var engine: Engine, var wheels : Wheels) {
 
 
     fun driver(){

@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        car = Car()
+        car = Car(Engine(),Wheels())
 
         car.driver()
 
