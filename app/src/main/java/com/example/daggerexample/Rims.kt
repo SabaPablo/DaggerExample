@@ -1,5 +1,5 @@
 package com.example.daggerexample
 
-class Wheels(var rims: Rims, var tires: Tires) {
+class Rims {
     //La clase no es nuestra y no podemos agregarle @Inject
 }
