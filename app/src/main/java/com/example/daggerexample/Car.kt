@@ -1,8 +1,9 @@
 package com.example.daggerexample
 
 import android.util.Log
+import javax.inject.Inject
 
-class Car constructor(var engine: Engine, var wheels : Wheels) {
+class Car @Inject constructor(var engine: Engine, var wheels : Wheels) {
 
 
     fun driver(){
