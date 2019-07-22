@@ -4,19 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.CarComponent
 import com.example.DaggerCarComponent
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var car : Car
+    @Inject lateinit var car : Car
     lateinit var component : CarComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         component = DaggerCarComponent.create()
 
-        car = component.getCar()
+        component.inject(this)
 
         car.driver()
 
