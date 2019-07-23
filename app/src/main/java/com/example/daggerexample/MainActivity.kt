@@ -2,9 +2,8 @@ package com.example.daggerexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.daggerexample.dagger.CarComponent
 import com.example.daggerexample.car.Car
-import com.example.daggerexample.dagger.DaggerCarComponent
+import com.example.daggerexample.dagger.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +17,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        component = DaggerCarComponent.create()
+        component = DaggerCarComponent.builder()
+            .petrolEngineModule(PetrolEngineModule(100))
+            .build()
 
         component.inject(this)
 

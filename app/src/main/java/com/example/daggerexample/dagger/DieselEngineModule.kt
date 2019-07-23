@@ -4,10 +4,14 @@ import com.example.daggerexample.car.DieselEngine
 import com.example.daggerexample.car.Engine
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class DieselEngineModule {
+class DieselEngineModule(private var horsePower: Int) {
 
-    @Binds
-    abstract fun bindEngine(engine: DieselEngine) : Engine
+    @Provides
+    fun provideEngine() : Engine {
+        return DieselEngine(horsePower)
+    }
+
 }
