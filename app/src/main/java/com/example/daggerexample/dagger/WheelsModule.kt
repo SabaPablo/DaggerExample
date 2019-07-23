@@ -1,5 +1,8 @@
-package com.example.daggerexample
+package com.example.daggerexample.dagger
 
+import com.example.daggerexample.car.Rims
+import com.example.daggerexample.car.Tires
+import com.example.daggerexample.car.Wheels
 import dagger.Module
 import dagger.Provides
 
@@ -23,6 +26,6 @@ object WheelsModule {
     @JvmStatic
     @Provides
     fun provideWheels(rims: Rims, tires: Tires) : Wheels {
-        return Wheels(rims,tires)
+        return Wheels(rims, tires)
     }
 }

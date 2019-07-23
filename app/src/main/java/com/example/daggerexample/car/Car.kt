@@ -1,11 +1,11 @@
-package com.example.daggerexample
+package com.example.daggerexample.car
 
 import android.util.Log
 import javax.inject.Inject
 
-class Car @Inject constructor(val wheels : Wheels) {
+class Car @Inject constructor(var engine : Engine, val wheels : Wheels) {
 
-    @Inject lateinit var engine :  Engine
+
 
     @Inject
     fun enableRemote(remote: Remote) {
@@ -14,7 +14,8 @@ class Car @Inject constructor(val wheels : Wheels) {
 
 
     fun driver(){
-        Log.d("Car", "runnnnnnn")
+        engine.start()
+        Log.d("Car", "driving...")
 
     }
 }
