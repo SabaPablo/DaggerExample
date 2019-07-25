@@ -8,7 +8,8 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var car : Car
+    @Inject lateinit var car1 : Car
+    @Inject lateinit var car2 : Car
     lateinit var component : CarComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,12 +19,14 @@ class MainActivity : AppCompatActivity() {
 
 
         component = DaggerCarComponent.builder()
-            .petrolEngineModule(PetrolEngineModule(100))
+            .horsePower(150)
+            .engineCapacity(1400)
             .build()
 
         component.inject(this)
 
-        car.driver()
+        car1.driver()
+        car2.driver()
 
     }
 }

@@ -3,7 +3,7 @@ package com.example.daggerexample.car
 import android.util.Log
 import javax.inject.Inject
 
-class Car @Inject constructor(var engine : Engine, val wheels : Wheels) {
+class Car @Inject constructor(var driver: Driver, var engine : Engine, val wheels : Wheels) {
 
 
 
@@ -15,7 +15,7 @@ class Car @Inject constructor(var engine : Engine, val wheels : Wheels) {
 
     fun driver(){
         engine.start()
-        Log.d("Car", "driving...")
+        Log.d("Car", ("$driver drives $this"))
 
     }
 }
